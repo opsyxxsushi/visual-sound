@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sushi.wav</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='icon_00000.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+    <div class="announcement-bar">
+        <div class="marquee">
+            <span>VISUAL SOUND EVERYWHERE - VISUAL SOUND EVERYWHERE - VISUAL SOUND EVERYWHERE </span>
+            <span>VISUAL SOUND EVERYWHERE - VISUAL SOUND EVERYWHERE - VISUAL SOUND EVERYWHERE </span>
+            <span>VISUAL SOUND EVERYWHERE - VISUAL SOUND EVERYWHERE - VISUAL SOUND EVERYWHERE </span>
+            <span>VISUAL SOUND EVERYWHERE - VISUAL SOUND EVERYWHERE - VISUAL SOUND EVERYWHERE </span>
+            <span>VISUAL SOUND EVERYWHERE - VISUAL SOUND EVERYWHERE - VISUAL SOUND EVERYWHERE </span>
+            <span>VISUAL SOUND EVERYWHERE - VISUAL SOUND EVERYWHERE - VISUAL SOUND EVERYWHERE </span>
+            <span>VISUAL SOUND EVERYWHERE - VISUAL SOUND EVERYWHERE - VISUAL SOUND EVERYWHERE </span>
+            <span>VISUAL SOUND EVERYWHERE - VISUAL SOUND EVERYWHERE - VISUAL SOUND EVERYWHERE </span>
+            <span>VISUAL SOUND EVERYWHERE - VISUAL SOUND EVERYWHERE - VISUAL SOUND EVERYWHERE </span>
+            <span>VISUAL SOUND EVERYWHERE - VISUAL SOUND EVERYWHERE - VISUAL SOUND EVERYWHERE </span>
+            
+        </div>
+    </div>
+    <div class="split-screen-wrapper">
+        <div class="left-side">
+            <img src="/static/background.jpg" alt="Artwork" class="hero-image">
+        </div>
+<div class="main-wrapper">
+    <div class="converter-container">
+<h1><a href="index.html" class="logo-link">VISUAL SOUND</a></h1>
+        <div class="form-wrapper">
+            <input type="text" id="linkInput" placeholder="PASTE YOUR YOUTUBE OR SOUNDCLOUD LINK HERE">
+            <button id="convertBtn">CONVERT</button>
+            <p id="statusMessage"></p>
+        </div>
+
+<div id="downloadPreview">
+    <img id="previewThumb" src="">
+    <div class="preview-info">
+        <p id="previewTitle"></p>
+        <p id="previewDuration"></p>
+        <div id="progressText"></div>
+    </div>
+</div>
+
+
+    <div id="historySection">
+        <div class="history-header">
+            <h3>POPULAR / RECENT</h3>
+            <div class="line"></div>
+        </div>
+        <div id="historyList"></div>
+    </div>
+</div>
+<footer class="site-footer">
+    <div class="footer-content">
+        <span>@2026 VISUAL SOUND. ALL RIGHT RESERVED.</span>
+        <div class="flag-icons">
+            <img src="https://flagcdn.com/mm.svg" alt="Myanmar" class="footer-flag">
+            <img src="https://flagcdn.com/sg.svg" alt="Singapore" class="footer-flag">
+        </div>
+    </div>
+</footer>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,280 @@
+@font-face {
+    font-family: 'HelveticaCustom';
+    src: url('/static/HELVETICA LIGHT REGULAR.OTF');
+}
+@font-face {
+    font-family: 'plank';
+    src: url('/static/PLANK__.TTF');
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #fff;
+     /* Background Image Code */
+    background-image: url('/static/BG_00000.png'); 
+    background-repeat: no-repeat;
+    /* This keeps it perfectly in the center of the screen */
+    /* background-size is NOT used here so it stays 1080x1080 */
+         animation: fadeInPage 2s ease-in-out;
+    background-position: center center;
+}
+/* Optional: Add a slight overlay if the text is hard to read */
+.main-wrapper {/* White with 80% transparency */
+    padding: 20px;
+    border-radius: 10px;
+}
+::-webkit-scrollbar {
+    width: 0px;               /* Thin and minimalist */
+    background: transparent;  /* Makes the track background transparent */
+}
+
+/* 2. The draggable part (the thumb) */
+::-webkit-scrollbar-thumb {
+    background: #fff;      /* Dark grey thumb */
+    border-radius: 10px;      /* Rounded edges */
+    border: 2px solid transparent; /* Creates a "gap" look if track isn't transparent */
+}
+
+/* 3. Hover effect on the thumb */
+::-webkit-scrollbar-thumb:hover {
+    background: #fff;      /* Lights up slightly when hovered */
+}
+
+/* 4. The track (the area behind the thumb) */
+::-webkit-scrollbar-track {
+    background: transparent;  /* Ensures the background stays clear */
+}
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 1080px; /* Forces height to your requirement */
+    align-items: center;
+}
+@keyframes fadeInPage {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+html, body, a, button, img {
+    /* Resized to 75% (24px), White fill, -25deg rotation */
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='black' style='transform: rotate(-25deg); transform-origin: center;'%3E%3Cpath d='M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z'/%3E%3C/svg%3E") 12 12, auto !important;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none;     /* IE 10 and IE 11 */
+    user-select: none;    
+}
+.converter-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers H1, Input, and Button vertically */
+    align-items: center;
+    width: 350px; /* Fixed width as requested */
+}
+
+h1 {
+    font-size: 24px;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-family: 'plank';
+}
+.logo-link {
+    text-decoration: none; /* Removes the underline */
+    color: inherit;        /* Keeps the text black (inherits from h1) */
+    cursor: pointer;      /* Ensures the "hand" icon appears on hover */
+}
+
+.logo-link:hover {
+    opacity: 0.7;          /* Optional: slight fade when you hover over it */
+}
+.form-wrapper {
+    width: 100%;
+    text-align: center;
+    font-family: 'HelveticaCustom';
+}
+
+#linkInput {
+    width: 100%;
+    padding: 12px;
+    border: 1.5px solid #000;
+    outline: none;
+    box-sizing: border-box;
+    text-align: center;
+        font-family: 'HelveticaCustom';
+}
+
+#convertBtn {
+    width: 100%;
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'HelveticaCustom';
+}
+
+/* Update this section in your index.css */
+#downloadPreview {
+    display: none; /* Keep hidden by default */
+    margin-top: 40px;
+    width: 100%;
+    align-items: center; /* Vertically centers text against the image */
+    gap: 20px;           /* Space between image and text */
+}
+
+/* Add this to ensure flex is used when visible */
+#downloadPreview[style*="display: block"] {
+    display: flex !important;
+}
+/* Bigger image */
+#previewThumb {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border: 1px solid #000;
+    flex-shrink: 0;
+}
+
+/* Text container */
+.preview-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-family: 'HelveticaCustom';
+}
+
+/* Song name */
+#previewTitle {
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 1.3;
+    font-family: 'HelveticaCustom';
+}
+
+/* Duration */
+#previewDuration {
+    font-size: 11px;
+    color: #777;
+    margin: 0;
+    font-family: 'HelveticaCustom';
+}
+
+/* Status text */
+#progressText {
+    font-size: 11px;
+    margin-top: 4px;
+    font-family: 'HelveticaCustom';
+}
+
+/* History Section at bottom */
+#historySection {
+    width: 350px;
+    padding-bottom: 50px;
+    margin-top: 50px; /* Space between center and history */
+}
+
+.history-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.history-header h3 {
+    font-size: 12px;
+    margin: 0;
+    white-space: nowrap;
+        font-family: 'HelveticaCustom';
+}
+
+.line {
+    flex-grow: 1;
+    height: 1px;
+    background: #000;
+}
+
+.history-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-family: monospace;
+}
+.announcement-bar {
+    width: 100%;
+    height: 35px;
+    background-color: #FFF;
+    color: #000;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    letter-spacing: 1px;
+}
+
+.marquee {
+    display: flex;
+    width: max-content;
+    animation: marquee-loop 10s linear infinite;
+}
+
+.marquee span {
+    font-family: 'HelveticaCustom';
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    white-space: nowrap;
+    padding-right: 50px;
+}
+
+@keyframes marquee-loop {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+.site-footer {
+    width: 100%;
+    background-color: transparent;
+    padding: 60px 0 40px 0; /* More space at top to separate from form */
+    margin-top: auto;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: row;    /* Forces everything into one line */
+    justify-content: center; /* Centers the whole "sentence" */
+    align-items: center;    /* Keeps text and flags level */
+    gap: 15px;              /* Space between text and flags */
+}
+
+.footer-content span {
+    color: #000;
+    font-family: 'HelveticaCustom';
+    font-size: 0.85rem;
+    letter-spacing: -.4px;
+    white-space: nowrap;    /* Prevents the text from breaking into two lines */
+}
+
+.flag-icons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.footer-flag {
+    width: 22px; /* Small, clean flag size */
+    height: auto;
+    display: block;
+}
+@media (max-width: 500px) {
+    body {
+        background-size: 1920px 1080px;
+        /* You might also want to center it for mobile */
+        background-position: center center; 
+    }
+}
