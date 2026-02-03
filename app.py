@@ -29,16 +29,22 @@ def convert():
 
     unique_id = str(uuid.uuid4())[:8]
     ydl_opts = {
+        # Allow it to grab the best available even if it's not 320kbps
         'format': 'bestaudio/best',
-        'cookiefile': 'cookies.txt',
-        'noplaylist': True,  # This tells it to only take the specific video
         'outtmpl': f'{DOWNLOAD_FOLDER}/%(title)s_{unique_id}.%(ext)s',
+        'cookiefile': 'cookies.txt',
         'postprocessors': [{
             'key': 'FFmpegExtractAudio',
             'preferredcodec': 'mp3',
-            'preferredquality': '320',
+            'preferredquality': '192', # 192 is safer and still high quality
         }],
         'noplaylist': True,
+        # Add these new flags to help bypass the PO Token issue
+        'extractor_args': {
+            'youtube': {
+                'player_client': ['android', 'web']
+            }
+        }
     }
 
     try:
@@ -81,4 +87,5 @@ def convert():
 if __name__ == '__main__':
 
     app.run(debug=True, port=5000)
+
 
