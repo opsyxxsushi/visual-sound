@@ -30,6 +30,7 @@ def convert():
     unique_id = str(uuid.uuid4())[:8]
     ydl_opts = {
         'format': 'bestaudio/best',
+        'noplaylist': True,  # This tells it to only take the specific video
         'outtmpl': f'{DOWNLOAD_FOLDER}/%(title)s_{unique_id}.%(ext)s',
         'postprocessors': [{
             'key': 'FFmpegExtractAudio',
@@ -77,4 +78,5 @@ def convert():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
+
     app.run(debug=True, port=5000)
