@@ -1,5 +1,5 @@
 # Use an official Python runtime as a parent image
-FROM python:3.9-slim
+FROM python:3.11-slim
 
 # Install FFmpeg and other dependencies
 RUN apt-get update && \
@@ -20,4 +20,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 5000
 
 # Run app.py when the container launches using Gunicorn
+
 CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
